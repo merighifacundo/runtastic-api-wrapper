@@ -93,6 +93,7 @@ GEM
       mini_portile2 (~> 2.3.0)
     puma (3.11.2)
     rack (2.0.4)
+    rack-cors (1.0.2)
     rack-test (0.8.2)
       rack (>= 1.0, < 3)
     rails (5.2.0.rc1)
@@ -165,6 +166,7 @@ DEPENDENCIES
   mongoid (~> 6.3)
   nokogiri (~> 1.8.2)
   puma (~> 3.11)
+  rack-cors
   rails (~> 5.2.0.rc1)
   rest-client (~> 2.0)
   spring
