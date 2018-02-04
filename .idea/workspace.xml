@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9636d4e-ce9f-4907-a1a4-25f7f38002bf" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/login_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/login_controller.rb" />
-      <change beforePath="$PROJECT_DIR$/app/jobs/application_job.rb" afterPath="$PROJECT_DIR$/app/jobs/application_job.rb" />
-      <change beforePath="$PROJECT_DIR$/app/models/activity_log.rb" afterPath="$PROJECT_DIR$/app/models/activity_log.rb" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change beforePath="$PROJECT_DIR$/app/services/runtastic_record_service.rb" afterPath="$PROJECT_DIR$/app/services/runtastic_record_service.rb" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change beforePath="$PROJECT_DIR$/config/mongoid.yml" afterPath="$PROJECT_DIR$/config/mongoid.yml" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -50,11 +42,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
               <caret line="4" column="23" lean-forward="false" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mongoid.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/mongoid.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="160" column="95" lean-forward="false" selection-start-line="160" selection-start-column="95" selection-end-line="160" selection-end-column="95" />
               <folding />
             </state>
           </provider>
@@ -75,16 +77,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
               <caret line="9" column="0" lean-forward="true" selection-start-line="0" selection-start-column="24" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="savable.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.4.2/gems/mongoid-6.3.0/lib/mongoid/persistable/savable.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="29" column="67" lean-forward="true" selection-start-line="29" selection-start-column="67" selection-end-line="29" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -158,7 +150,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config/mongoid.yml" />
         <option value="$PROJECT_DIR$/bin/delayed_job" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/config/initializers/sucker_punch.rb" />
@@ -177,6 +168,7 @@
         <option value="$PROJECT_DIR$/app/jobs/application_job.rb" />
         <option value="$PROJECT_DIR$/app/controllers/activities_controller.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/config/mongoid.yml" />
       </list>
     </option>
   </component>
@@ -422,12 +414,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1517681693180</updated>
-      <workItem from="1517681695450" duration="25863000" />
+      <workItem from="1517681695450" duration="26228000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25863000" />
+    <option name="totallyTimeSpent" value="26228000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1400" height="833" extended-state="0" />
@@ -673,14 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/mongoid.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="40" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.4.2/gems/sucker_punch-2.0.4/lib/sucker_punch/job.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
@@ -837,6 +821,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="23" lean-forward="false" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/mongoid.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="160" column="95" lean-forward="false" selection-start-line="160" selection-start-column="95" selection-end-line="160" selection-end-column="95" />
           <folding />
         </state>
       </provider>
