@@ -6,11 +6,20 @@ class ActivitiesController < ApplicationController
     render json: @logs
   end
 
+
+
   # GET /activities/1
   def show
-    @activity_log = ActivityLog.find(params[:id])
+    if ("latest".eql? params[:id])
+      @activity_log = ActivityLog.order_by(:date => 'desc').first
+    else
+      @activity_log = ActivityLog.find(params[:id])
+    end
+
     render json: @activity_log
   end
+
+
 
 
 end
