@@ -8,6 +8,6 @@ class LoginService
     data = JSON.parse response.body
     user = data['current_user']
     token = Nokogiri::HTML(data['update']).search('input[name=authenticity_token]').attr('value')
-    {user: user, cookies: cookies, authenticationToken: token, password: password}
+    {user: user, cookies: cookies, authenticationToken: token, password: password, email: username}
   end
 end
