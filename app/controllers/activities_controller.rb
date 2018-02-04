@@ -1,8 +1,7 @@
 class ActivitiesController < ApplicationController
   # GET /activities
   def index
-    @logs = ActivityLog.all
-
+    @logs = ActivityLog.where(user_id: @current_user[:id])
     render json: @logs
   end
 

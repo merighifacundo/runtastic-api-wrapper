@@ -8,8 +8,7 @@ class User
   has_many :records
   has_many :activity_logs
   def as_json(options={})
-    json = super(options)
-    json.except('password')
+    super(options).except('password')
   end
   index({ email: 1 }, { unique: true, name: "email_index" })
 end
