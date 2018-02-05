@@ -1,24 +1,33 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Runtastic api Wrapper
 
-Things you may want to cover:
+#### This RestAPI layer authenticates over the services on runtastic and parse the html to get the authenticationToken and the cookies. Then acts like a rest api.
 
-* Ruby version
 
-* System dependencies
+## Ruby version: '2.4.2'
 
-* Configuration
+## System dependencies: 
 
-* Database creation
+* MongoDB
+* Runtastic
 
-* Database initialization
+## Database creation
 
-* How to run the test suite
+* MongoDB
 
-* Services (job queues, cache servers, search engines, etc.)
+## Services
 
-* Deployment instructions
+* ApplicationJob
 
-* ...
+## Deployment Instructions
+
+* Simple heroku deploy
+
+## Available api url:
+
+https://myrunhub.herokuapp.com/
+
+## Webui url:
+
+https://myrunhubui.herokuapp.com/#/
