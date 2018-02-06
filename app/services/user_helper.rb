@@ -1,4 +1,4 @@
-class UserFactory
+class UserHelper
 
   def self.build_or_retrieve(loginInformation)
     begin

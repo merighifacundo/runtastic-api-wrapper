@@ -8,7 +8,7 @@ class LoginController < ApplicationController
     rescue RestClient::Unauthorized
       return render json: {}, status: :unauthorized
     end
-    @user = UserFactory.build_or_retrieve(loginInformation)
+    @user = UserHelper.build_or_retrieve(loginInformation)
     token = JasonWebTokenModule::encode(user_id: @user.id.to_s)
     ApplicationJob.perform_in(5, "loadinformation")
     if @user.save

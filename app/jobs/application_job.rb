@@ -7,11 +7,14 @@ class ApplicationJob
       loginInformation = LoginService.new().login(user[:email], user[:password])
       activities = RuntasticActivitiesService.new().get_activities(loginInformation[:user]['slug'], loginInformation[:user]['id'], loginInformation[:authenticationToken], loginInformation[:cookies]);
       activities.each do |activity|
-        @activity_log = ActivityLog.new(activity)
-        @activity_log.user = user
-        @activity_log.save!
-        user.activity_logs.push(@activity_log)
-        user.save!
+        if !ActivityHelper.existActivity(user,activity[:activity_id])
+          @activity_log = ActivityLog.new(activity)
+          @activity_log.user = user
+          @activity_log.save!
+          user.activity_logs.push(@activity_log)
+          user.save!
+        end
+
       end
       response = RuntasticRecordService.new().
                                         get_records(loginInformation[:user]['slug'],
@@ -28,4 +31,5 @@ class ApplicationJob
 
     end
   end
+
 end
