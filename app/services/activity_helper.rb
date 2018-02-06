@@ -1,6 +1,6 @@
 class ActivityHelper
-  def self.existActivity(user, id)
-    return ActivityLog.where(user_id: user[:id], activity_id: id).exists?
+  def self.existActivity(user_id, id)
+    return ActivityLog.where(user_id: user_id, activity_id: id).exists?
   end
 
 end

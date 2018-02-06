@@ -1,7 +1,7 @@
 class RuntasticActivitiesService
   include ServiceModule
 
-  def get_activities(slug, id, authenticationToken, cookies)
+  def get_activities(slug, runtastic_user_id, user_id, authenticationToken, cookies)
     response = RestClient.get('https://www.runtastic.com/en/users/token/sport-sessions'.gsub('token', slug),
                               headers = create_request(authenticationToken, cookies))
 
@@ -12,7 +12,9 @@ class RuntasticActivitiesService
     activities = Array.new
     data_final = JSON.parse data_final
     data_final.each do |activity_record|
-      activities.push(self.get_activity_details(id, authenticationToken, cookies,{:activity_id => activity_record[0], :date => activity_record[1]}))
+      if !ActivityHelper.existActivity(user_id,activity_record[0]) #avoid doing anouther request
+        activities.push(self.get_activity_details(runtastic_user_id, authenticationToken, cookies,{:activity_id => activity_record[0], :date => activity_record[1]}))
+      end
     end
     activities
   end
