@@ -4,16 +4,17 @@ class ApplicationJob
   def perform(event)
     @users = User.all
     @users.each do |user|
-      process_activities(user)
-      process_records(user)
+      loginInformation = LoginService.new().login(user[:email], user[:password])
+      process_activities(loginInformation,user)
+      process_records(loginInformation,user)
 
     end
   end
 
   private
 
-  def process_activities(user)
-    loginInformation = LoginService.new().login(user[:email], user[:password])
+  def process_activities(loginInformation,user)
+
     activities = RuntasticActivitiesService.new().get_activities(loginInformation[:user]['slug'],  loginInformation[:user]['id'], user[:id], loginInformation[:authenticationToken], loginInformation[:cookies]);
     activities.each do |activity|
       @activity_log = ActivityLog.new(activity)
@@ -24,7 +25,7 @@ class ApplicationJob
     end
   end
 
-  def process_records(user)
+  def process_records(loginInformation,user)
     response = RuntasticRecordService.new().
         get_records(loginInformation[:user]['slug'],
                     loginInformation[:authenticationToken],

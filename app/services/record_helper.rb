@@ -7,7 +7,7 @@ class RecordHelper
     rescue Mongoid::Errors::DocumentNotFound
       @record = Record.new('name': record['record_type'], 'value': record['value'])
     end
-    @user
+    @record
 
   end
 end
