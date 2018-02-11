@@ -5,6 +5,8 @@ class User
   field :email, type: String
   field :password, type: String
   field :age, type: Numeric
+  field :alexa_integration, type: Boolean
+  attr_accessor :position
   has_many :records
   has_many :activity_logs
   def as_json(options={})

@@ -86,6 +86,8 @@ GEM
     mongoid (6.3.0)
       activemodel (~> 5.1)
       mongo (>= 2.5.0, < 3.0.0)
+    mongoid_includes (2.1.0)
+      mongoid (>= 6.0.1, < 7.0.0)
     msgpack (1.2.2)
     netrc (0.11.0)
     nio4r (2.2.0)
@@ -164,6 +166,7 @@ DEPENDENCIES
   jwt
   listen (>= 3.0.5, < 3.2)
   mongoid (~> 6.3)
+  mongoid_includes
   nokogiri (~> 1.8.2)
   puma (~> 3.11)
   rack-cors

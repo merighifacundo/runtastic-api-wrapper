@@ -11,6 +11,7 @@ gem 'mongoid', '~> 6.3'
 gem 'rest-client', '~> 2.0'
 gem 'nokogiri', '~> 1.8.2'
 gem 'sucker_punch', '~> 2.0'
+gem 'mongoid_includes'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'

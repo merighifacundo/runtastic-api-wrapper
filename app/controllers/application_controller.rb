@@ -6,6 +6,11 @@ class ApplicationController < ActionController::API
 
 
   def authenticate_request
+    if !request.headers[:AlexaAuthorization].nil?
+      @current_user = User.find(request.headers[:AlexaAuthorization])
+      return @current_user
+    end
+
     if request.headers[:Authorization].nil?
       return render json: { error: 'Not Authorized Missing Header' }, status: 401
     end

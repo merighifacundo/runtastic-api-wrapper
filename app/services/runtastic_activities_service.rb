@@ -13,7 +13,9 @@ class RuntasticActivitiesService
     data_final = JSON.parse data_final
     data_final.each do |activity_record|
       if !ActivityHelper.existActivity(user_id,activity_record[0]) #avoid doing anouther request
-        activities.push(self.get_activity_details(runtastic_user_id, authenticationToken, cookies,{:activity_id => activity_record[0], :date => activity_record[1]}))
+
+        detail = self.get_activity_details(runtastic_user_id, authenticationToken, cookies,{:activity_id => activity_record[0], :date => activity_record[1]})
+        activities.push(detail) unless !detail
       end
     end
     activities
@@ -26,6 +28,11 @@ class RuntasticActivitiesService
 
     activity_detail = JSON.parse response.body
     activity[:data] = activity_detail
+    activityType = activity_detail['included'].select { |object| object['type'] == 'sport_type' }.first
+    if activityType['attributes']['name'] != 'running'
+      puts "Filtering not running"
+      return nil
+    end
     activity[:original_data] = activity[:date]
     activity[:date] = DateTime.strptime(activity[:date], "%Y-%m-%d") #2017-07-08
     activity
